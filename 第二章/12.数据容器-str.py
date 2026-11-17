@@ -86,7 +86,3 @@ for i in num:
             cont=0
 t=''.join(s)
 print(t)
-
-123456
-135 246
-156 324

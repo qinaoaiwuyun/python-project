@@ -1,0 +1,163 @@
+Index: 第二章/15.数据类型-dict.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>dict={\"key\": \"value\"}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/第二章/15.数据类型-dict.py b/第二章/15.数据类型-dict.py
+--- a/第二章/15.数据类型-dict.py	(revision ca0a11be5875e0fc84598e7a3c15d97e1a4f2031)
++++ b/第二章/15.数据类型-dict.py	(date 1794917310989)
+@@ -1,1 +1,129 @@
+-dict={"key": "value"}
++# 字典 -- key不能重复(如果重复,后面的值,会覆盖前面的值),key必须得是不可变类型(str,int,float,tuple)
++# 定义字典
++dict1 ={"王林":670,"李慕婉":608,"徐立国":580,"韩立":688}
++
++print(dict1)
++print(type(dict1))
++
++# key必须得是不可变类型(str,int,float,tuple),不能是list,set,dict
++dict2 = {0:670,1.5:600,(1,2):500,('A','B'):688}
++print(dict2)
++
++# 访问
++print(dict1["李慕婉"]) #获取
++dict1["李慕婉"] = 688 # 修改
++print(dict1)
++
++# --------------------------- 字典 常见操作 ------------------------------------
++dict1 ={"王林":670,"李慕婉":608,"许立国":580,"韩立":688}
++print(dict1)
++
++# 添加 - key不存在就是添加
++dict1["涛哥"]=620
++print(dict1)
++
++# 查询
++print(dict1["涛哥"]) # 根据key获取value
++print(dict1.get("涛哥")) # 根据key获取value
++
++print(dict1.keys()) # 获取所有的key
++print(dict1.values()) #  获取所有的value
++print(dict1.items()) # 获取所有的键值对 key:value
++
++# 删除
++score = dict1.pop("许立国")
++print(score)
++print(dict1)
++
++del dict1["韩立"]
++print(dict1)
++
++# 遍历
++for k in dict1.keys():
++    print(f"{k}: {dict1[k]}")
++
++for item in dict1.items():
++    print(f"{item[0]}: {item[1]}")
++
++for k,v in dict1.items():
++    print(f"{k}: {v}")
++
++
++
++
++
++
++
++
++
++"""
++    案例：
++    开发一个购物车管理系统，实现商品信息的添加、修改、删除、查询和统计功能。系统使用嵌套字典结构存储商品数据，通过控制台菜单与用户交互。具体功能如下：
++        1，添加购物车：用户根据提示录入商品名称、以及该商品的价格、数量，保存该商品信息到购物车。
++        2.修改购物车：要求用户输入要修改的购物车商品名称，然后再提示输入该商品的价格、数量，输入完成后修改该商品信息。
++        3.删除购物车：要求用户输入要删除的购物车名称，根据名称删除购物车中的商品。
++        4.查询购物车：将购物车中的商品信息展示出来，格式为：“商品名称：XXX，商品价格：XXx，商品数量：xxx"。
++        5，退出购物车
++        
++    结构: shopping_cart = {"Meta80":{"price":6999,"num":2},"鼠标":{...}}
++"""
++shopping_cart = {}
++
++menu = """
++############# 购物车管理系统 ##########
++#             1.添加购物车           #
++#             2.修改购物车           #
++#             3.删除购物车           #
++#             4.查询购物车           #
++#             5.退出购物车           #
++####################################
++"""
++while True:
++    # 1.制作菜单
++    print("欢迎使用购物车管理系统~")
++
++
++    # 2.执行的具体操作
++    choice = input("请输入要执行的操作(1-5)")
++
++    match choice:
++        case "1": # 添加购物车
++            good_name=input("请输入商品名称: ")
++            good_price=float(input("请输入商品名称: "))
++            good_num=int(input("请输入商品名称: "))
++
++            # 如果商品存在,则不执行添加,提示信息
++            if good_name in shopping_cart:
++                print("该商品已存在,请重新选择~")
++            else:
++                shopping_cart[good_name]={"price":good_price,"num":good_num}
++                print("商品添加成功~")
++        case "2": # 修改购物车
++            good_name = input("请输入商品名称: ")
++
++            # 如果商品不存在,则提示错误信息,重新选择
++            if good_name not in shopping_cart:
++                print("该商品不存在,请重新选择~")
++            else:
++                good_price = float(input("请输入商品名称: "))
++                good_num = int(input("请输入商品名称: "))
++                shopping_cart[good_name] = {"price": good_price, "num": good_num}
++                print("商品修改成功~")
++        case "3": # 删除购物车
++            good_name = input("请输入要删除的商品名称: ")
++
++            # 如果商品不存在,则提示错误信息,重新选择
++            if good_name not in shopping_cart:
++                print("该商品不存在,请重新选择~")
++            else:
++                del shopping_cart[good_name]
++                print("商品删除成功~")
++        case "4": # 查询购物车
++            for good_name in shopping_cart.keys():
++                good_info = shopping_cart[good_name]
++                print(f"商品名称: {good_name},商品价格: {good_info['price']},商品数量: {good_info['num']}")
++        case "5": # 退出购物车
++            print("Bye~")
++            break
++        case _: #匹配其他情况
++            print("非法操作,不支持")
+\ No newline at end of file
+Index: 第二章/12.数据容器-str.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># # 字符串 基本操作 ---> 不可变的(无法修改),有序性,可迭代行\r\n# s = \"Hello-Python\"\r\n#\r\n# print(s[4])\r\n# print(s[-8])\r\n#\r\n# for i in s:\r\n#     print(i)\r\n#\r\n# # 切片\r\n# print(s[0:5:1])\r\n# print(s[:5:1])\r\n# print(s[:5:])\r\n# print(s[::1])\r\n# print(s[:5])\r\n#\r\n# print(s[6:12:1])\r\n# print(s[6:1])\r\n#\r\n# print(\"------------------------------\")\r\n# # 步长 ---> 整数: 从前往后截取 ; 负数: 从后往前截取\r\n# print(s[-1:-7:-1])\r\n# print(s[::-1])\r\n#\r\n# #------------------- 字符串常用方法 ---------------------\r\n# s = \"Hello-Python-Hello-World\"\r\n#\r\n# # find() 查找指定字符串第一次出现的索引位置\r\n# index = s.find(\"-\")\r\n# print(index)\r\n#\r\n# # count()统计子字符串在指定字符串中出现的次数\r\n# c = s.count(\"0\")\r\n# print(c)\r\n#\r\n# # upper() 转为大写\r\n# su = s.upper()\r\n# print(su)\r\n#\r\n# # lower() 转为小写\r\n# sl = s.lower()\r\n# print(sl)\r\n#\r\n# # split() 将字符串按照指定字符串切割\r\n# slist = s.split(\"-\")\r\n# print(slist)\r\n#\r\n# # strip() 去除字符串两边的空格\r\n# ss = s.strip()\r\n# print(ss)\r\n#\r\n# # replace() 将字符串中的指定字串替换为新的内容\r\n# sr = s.replace(\"-\", \"_\")\r\n# print(sr)\r\n#\r\n# # startswith() / endswith() 判断字符串是否是以指定的字符串 / 结尾,返回布尔值\r\n# print(s.startswith(\"Hello\"))\r\n# print(s.endswith(\"Python\"))\r\n\r\n\r\n# ------------------ 字符串案例 -------------\r\n# 案例1: 邮箱格式验证:用户输入一个邮箱,验证邮箱格式是否正确(包含一个人@和至少一个.),如果输入正确,输入\"邮箱格式正确\",否则输出\"邮箱格式错误\".\r\n# mail = input(\"请输入邮箱\")\r\n# if \".\" in mail and mail.count(\"@\") != 1:\r\n#     print(\"邮箱格式正确\")\r\n# else:\r\n#     print(\"邮箱格式错误\")\r\n\r\n\r\n\r\nn=int(input())\r\nnum=input()\r\ncont=0\r\ns=[]\r\nlew=0\r\nfor i in num:\r\n    if cont==0:\r\n        s.append(i)\r\n        lew=i\r\n        cont+=1\r\n    else:\r\n        if i==lew:\r\n            cont+=1\r\n        else:\r\n            s.append(str(cont))\r\n            cont=0\r\nt=''.join(s)\r\nprint(t)\r\n\r\n123456\r\n135 246\r\n156 324
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/第二章/12.数据容器-str.py b/第二章/12.数据容器-str.py
+--- a/第二章/12.数据容器-str.py	(revision ca0a11be5875e0fc84598e7a3c15d97e1a4f2031)
++++ b/第二章/12.数据容器-str.py	(date 1794832804374)
+@@ -86,7 +86,3 @@
+             cont=0
+ t=''.join(s)
+ print(t)
+-
+-123456
+-135 246
+-156 324
+\ No newline at end of file
+diff --git a/第二章/16.函数基础.py b/第二章/16.函数基础.py
+new file mode 100644
