@@ -62,7 +62,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.新建 文本文档">
+  <component name="RunManager" selected="Python.b">
     <configuration name="新建 文本文档" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python-learning" />
       <option name="ENV_FILES" value="" />
@@ -161,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.新建 文本文档" />
         <item itemvalue="Python.b" />
+        <item itemvalue="Python.新建 文本文档" />
         <item itemvalue="Python.16.函数基础" />
         <item itemvalue="Python.15.数据类型-dict" />
       </list>
