@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df99ea55-086e-41b9-bdb5-672bef870dc2" name="更改" comment="" />
+    <list default="true" id="df99ea55-086e-41b9-bdb5-672bef870dc2" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/第二章/17.函数案例.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +48,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.04.extend.executor": "Run",
     "Python.15.数据类型-dict.executor": "Run",
-    "Python.16.函数基础.executor": "Run",
+    "Python.16.函数基础.executor": "Debug",
     "Python.b.executor": "Run",
     "Python.新建 文本文档.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -63,7 +65,7 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.04.extend">
+  <component name="RunManager" selected="Python.16.函数基础">
     <configuration name="新建 文本文档" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python-learning" />
       <option name="ENV_FILES" value="" />
@@ -186,10 +188,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.16.函数基础" />
         <item itemvalue="Python.04.extend" />
         <item itemvalue="Python.b" />
         <item itemvalue="Python.新建 文本文档" />
-        <item itemvalue="Python.16.函数基础" />
         <item itemvalue="Python.15.数据类型-dict" />
       </list>
     </recent_temporary>
@@ -213,6 +215,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Python SDK configuration to project settings" />
